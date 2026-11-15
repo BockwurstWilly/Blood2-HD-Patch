@@ -1,0 +1,14 @@
+# build output
+out/
+
+# game files: never part of the repository (copyright Monolith / GOG)
+testgame/
+reference/
+tools/cshell_ref.dll
+
+# downloads and local tooling
+tools/dl/
+tools/.venv/
+tools/shot.ps1
+__pycache__/
+*.pyc
