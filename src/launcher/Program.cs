@@ -16,6 +16,10 @@ namespace Blood2HD
                 MessageBox.Show(T.Get("err_nogame"), "Blood II - HD Launcher", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 1;
             }
+            T.LoadLanguage(dir);
+            foreach (var a in args)
+                if (a.StartsWith("/lang=", StringComparison.OrdinalIgnoreCase))     // tests / screenshots
+                    T.SetLanguage(a.Substring(6));
             foreach (var a in args)
             {
                 // /keys=modern|original: apply a key layout to autoexec.cfg without opening the window (tests)

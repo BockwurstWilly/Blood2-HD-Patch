@@ -1,4 +1,4 @@
-# Blood II: The Chosen – HD Patch & Launcher
+﻿# Blood II: The Chosen – HD Patch & Launcher
 
 Inoffizieller HD-Patch mit eigenem Launcher für **Blood II: The Chosen + The Nightmare Levels (GOG)** unter Windows 10/11.
 Ein Setup statt eines Abends mit Wiki, Downloads und Konfigurationsdateien. Die Deinstallation stellt den Spielordner byte-genau wieder her.
@@ -21,6 +21,7 @@ Ein Setup statt eines Abends mit Wiki, Downloads und Konfigurationsdateien. Die 
 | Vollbild | randloses Vollbild statt exklusivem Modus (sonst kleines verschobenes Fenster bzw. eingefrorenes Bild nach Alt+Enter) |
 | Rechte | kein Admin-/XP-Modus mehr (GOG-Kompatibilitätseinträge ersetzt, bei der Deinstallation wiederhergestellt) |
 | Spiel | The Nightmare Levels an/aus, Logo-Videos überspringen |
+| Sprache | Launcher auf Englisch oder Deutsch, ab Werk nach Windows-Sprache, umschaltbar unter Info |
 
 Ausführliche Beschreibung für Spieler: [README.txt](README.txt) (liegt auch dem Download bei).
 
@@ -63,7 +64,7 @@ Spieltests (starten das Spiel, schicken Eingaben nur, solange das Spielfenster v
 - `tools\ingame.ps1 -Game <Ordner> -Out <Ordner> [-ViaLauncher] [-MouseTest]` – ins erste Level, bewegen, schießen, Screenshots, DSOAL-Log
 - `tools\menushot.ps1` – Hauptmenü fotografieren, ohne Eingaben
 
-Launcher-Schalter für Tests: `/cmdline=<Datei>`, `/snapshot=<Ordner>`, `/keys=modern|original`, `/launch[=<Logdatei>]`.
+Launcher-Schalter für Tests: `/cmdline=<Datei>`, `/snapshot=<Ordner>`, `/keys=modern|original`, `/launch[=<Logdatei>]`, `/lang=en|de`.
 `BLOOD2HD_WORKAREA=1920x1032` täuscht einen kleineren Bildschirm vor (Verkleinerung des Launchers).
 
 ## Aufbau
@@ -109,7 +110,7 @@ Blood II: The Chosen © 1998 Monolith Productions. Inoffizielles Fanprojekt, ent
 
 ## English
 
-Unofficial HD patch and launcher for the GOG release of *Blood II: The Chosen* + *The Nightmare Levels* on Windows 10/11: dgVoodoo2 (D3D11, up to 4K, MSAA), 60 fps cap, DSOAL + OpenAL Soft with working EAX (the provider has to be selected by name), dinputto8 mouse fix, key bindings in the launcher, optional Hor+ widescreen (own in-memory patch, no third-party files), borderless fullscreen, no admin/XP mode. One setup; uninstalling restores the game folder byte for byte.
+Unofficial HD patch and launcher for the GOG release of *Blood II: The Chosen* + *The Nightmare Levels* on Windows 10/11: dgVoodoo2 (D3D11, up to 4K, MSAA), 60 fps cap, DSOAL + OpenAL Soft with working EAX (the provider has to be selected by name), dinputto8 mouse fix, key bindings in the launcher, optional Hor+ widescreen (own in-memory patch, no third-party files), borderless fullscreen, no admin/XP mode. Launcher in English or German (follows the Windows language, switchable under About). One setup; uninstalling restores the game folder byte for byte.
 
 Build: Visual Studio 2019+ or Build Tools (.NET desktop build tools), then `powershell -ExecutionPolicy Bypass -File build.ps1` → `out\Blood2HD_Setup.exe` and `out\release\*.zip`. Test: `tests\e2e.ps1 -GameCopy <pristine GOG copy>`.
 

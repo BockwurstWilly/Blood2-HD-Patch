@@ -5,13 +5,39 @@ namespace Blood2HD
 {
     static class Version
     {
-        public const string Text = "1.2";
+        public const string Text = "1.2.1";
     }
 
-    /// <summary>UI texts, German or English depending on the Windows display language.</summary>
+    /// <summary>
+    /// UI texts in English or German. "auto" (default) follows the Windows display language: German on a
+    /// German Windows, English everywhere else. The launcher can fix it in BloodHD.ini [Launcher] Language.
+    /// </summary>
     static class T
     {
-        public static readonly bool German = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "de";
+        public static readonly bool WindowsGerman = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "de";
+        public static bool German = WindowsGerman;
+        public static string Language = "auto";     // auto | en | de
+
+        public static void SetLanguage(string lang)
+        {
+            lang = (lang ?? "auto").Trim().ToLowerInvariant();
+            Language = lang == "en" || lang == "de" ? lang : "auto";
+            German = Language == "auto" ? WindowsGerman : Language == "de";
+        }
+
+        /// <summary>Reads the player's choice from BloodHD.ini in the game folder.</summary>
+        public static void LoadLanguage(string dir)
+        {
+            try { SetLanguage(IniDoc.Load(System.IO.Path.Combine(dir, "BloodHD.ini")).Get("Launcher", "Language", "auto")); }
+            catch (System.Exception) { }
+        }
+
+        public static void SaveLanguage(string dir, string lang)
+        {
+            var ini = IniDoc.Load(System.IO.Path.Combine(dir, "BloodHD.ini"));
+            ini.Set("Launcher", "Language", lang);
+            ini.Save();
+        }
 
         public static string Get(string key, params object[] args)
         {
@@ -125,6 +151,8 @@ namespace Blood2HD
             { "info_tested", new[] { "Getestete Spielversion.", "Tested game version." } },
             { "info_untested", new[] { "Nicht getestete Spielversion.", "Untested game version." } },
             { "info_components", new[] { "Verbaut – vielen Dank an ihre Schöpfer:\n• dgVoodoo2 von Dege – Direct3D 6 über Direct3D 11, Monitorauflösung, Kantenglättung (Freeware)\n• DSOAL und OpenAL Soft von Chris Robinson – DirectSound mit EAX auf heutigen Soundkarten (LGPL)\n• dinputto8 von Elisha Riedlinger – DirectInput 8 für Mäuse mit hoher Abfragerate (zlib)\n• Breitbild-Sichtfeld: eigener Code; die Stelle in Client.exe hat AlphaYellow gefunden (Widescreen Fixes, MIT)\n• Hinweise zu Maus, Bildrate und EAX: PCGamingWiki-Community", "Built in – many thanks to their creators:\n• dgVoodoo2 by Dege - Direct3D 6 via Direct3D 11, monitor resolution, anti-aliasing (freeware)\n• DSOAL and OpenAL Soft by Chris Robinson - DirectSound with EAX on today's sound cards (LGPL)\n• dinputto8 by Elisha Riedlinger - DirectInput 8 for high polling rate mice (zlib)\n• Widescreen field of view: own code; the spot in Client.exe was found by AlphaYellow (Widescreen Fixes, MIT)\n• Mouse, frame rate and EAX hints: the PCGamingWiki community" } },
+            { "info_lang", new[] { "Sprache / Language", "Language / Sprache" } },
+            { "lang_auto", new[] { "Automatisch (Windows-Sprache)", "Automatic (Windows language)" } },
             { "info_open", new[] { "Spielordner", "Game folder" } },
             { "info_readme", new[] { "Liesmich", "Readme" } },
             { "info_uninstall", new[] { "Patch entfernen", "Remove patch" } },

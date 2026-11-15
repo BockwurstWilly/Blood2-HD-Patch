@@ -1,4 +1,4 @@
-﻿Blood II: The Chosen HD Patch 1.2 - Drittanbieter-Komponenten / third-party components
+﻿Blood II: The Chosen HD Patch 1.2.1 - Drittanbieter-Komponenten / third-party components
 ======================================================================================
 
 dgVoodoo2 2.87.5  (DDraw.dll, D3DImm.dll, dgVoodooCpl.exe, dgVoodoo.conf)

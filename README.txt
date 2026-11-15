@@ -1,4 +1,4 @@
-﻿Blood II: The Chosen + The Nightmare Levels (GOG) - HD Patch 1.2
+﻿Blood II: The Chosen + The Nightmare Levels (GOG) - HD Patch 1.2.1
 =================================================================
 
 DEUTSCH
@@ -58,6 +58,7 @@ Spiel
   * The Nightmare Levels an/aus: an = Add-on mit seinen Levels, aus = reine Kampagne mit Patch 2.0.
     Spielstände beider Varianten passen nicht zueinander.
   * Logo-Videos überspringen (Monolith, GT); das Story-Intro bleibt.
+  * Sprache des Launchers: Info -> Sprache (Automatisch = Windows-Sprache, English, Deutsch).
 
 Hinweise
   * GOG Galaxy "Dateien prüfen/reparieren" stellt den Original-Launcher wieder her -> Setup erneut
@@ -99,6 +100,7 @@ game's DirectInput calls through dinputto8 to DirectInput 8 (the PCGamingWiki fi
 in the launcher. Key bindings, mouse speed and invert in the launcher, stored in the game's
 autoexec.cfg. Presets: "Modern (WASD)" (set on a new install) and "Original (1998)".
 Game: The Nightmare Levels on/off, skip logo videos (the story intro stays).
+Launcher language: About -> Language (automatic = Windows language, English, German).
 Notes: unplug wireless headset USB dongles while the game starts (they stop it from launching);
 second monitor: set "CardDesc" "\\.\DISPLAY1" in autoexec.cfg; Alt+Tab in fullscreen may crash
 (original bug); the NT music fix (AM18.dll) is already part of the GOG release.

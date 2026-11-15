@@ -473,7 +473,21 @@ namespace Blood2HD
             text.MaximumSize = new Size(640, 0);
             text.Location = new Point(28, y);
             p.Controls.Add(text);
-            y += Theme.TextHeight(text, 640) + 18;
+            y += Theme.TextHeight(text, 640) + 12;
+            // language: the window is rebuilt in the new language (settings are saved first)
+            var cbLang = Options(320, "auto", T.Get("lang_auto"), "en", "English", "de", "Deutsch");
+            Row(p, ref y, T.Get("info_lang"), cbLang);
+            Select(cbLang, T.Language);
+            cbLang.SelectedIndexChanged += (o, e) =>
+            {
+                var lang = Value(cbLang);
+                if (lang == T.Language)
+                    return;
+                if (!Game.IsRunning())
+                    SaveAll();
+                try { T.SaveLanguage(dir, lang); } catch (Exception) { }
+                Application.Restart();
+            };
             var open = Theme.Button(T.Get("info_open"));
             open.Bounds = new Rectangle(28, Math.Max(y, 330), 200, 30);
             open.Click += (o, e) => Process.Start("explorer.exe", "\"" + dir + "\"");
