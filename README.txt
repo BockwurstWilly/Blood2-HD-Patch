@@ -1,4 +1,4 @@
-﻿Blood II: The Chosen + The Nightmare Levels (GOG) - HD Patch 1.2.1
+﻿Blood II: The Chosen + The Nightmare Levels (GOG) - HD Patch 1.2.2
 =================================================================
 
 DEUTSCH
@@ -127,5 +127,17 @@ Technical details
   * HKCU ...\AppCompatFlags\Layers: Client.exe "~ HIGHDPIAWARE", BLOOD2.EXE none (GOG's values
     saved in _HDPatch_Backup\compat.txt and restored on uninstall)
   * Monolith.smk, Gti.smk: moved to _HDPatch_Backup\movies when skipped
+
+Lizenz / license
+----------------
+  HD-Patch (c) 2026 BockwurstWilly - https://github.com/BockwurstWilly
+  PolyForm Noncommercial License 1.0.0 (Lizenzen\HD-Patch-License.txt): nutzen, weitergeben und
+  verändern ist frei, kommerzielle Nutzung nicht; der Hinweis auf BockwurstWilly muss bleiben.
+  Kommerzielle Nutzung nur nach Absprache über GitHub.
+  Free to use, share and change; no commercial use; keep the credit to BockwurstWilly.
+  Commercial use only by arrangement - contact via GitHub.
+  Mitgelieferte Fremd-Dateien behalten ihre Lizenzen (THIRD-PARTY.txt) / bundled third-party
+  files keep their own licenses.
+  1.2.2: nur die Lizenz geändert (vorher MIT) / only the license changed (was MIT).
 
 Blood II: The Chosen (c) 1998 Monolith Productions. This patch contains no game files.

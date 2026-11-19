@@ -1,117 +1,122 @@
 ﻿# Blood II: The Chosen – HD Patch & Launcher
 
-Inoffizieller HD-Patch mit eigenem Launcher für **Blood II: The Chosen + The Nightmare Levels (GOG)** unter Windows 10/11.
-Ein Setup statt eines Abends mit Wiki, Downloads und Konfigurationsdateien. Die Deinstallation stellt den Spielordner byte-genau wieder her.
+Unofficial HD patch with its own launcher for **Blood II: The Chosen + The Nightmare Levels (GOG)** on Windows 10/11.
+One setup instead of an evening with wikis, downloads and config files. Uninstalling restores the game folder byte for byte.
 
-*Unofficial HD patch and launcher for the GOG release of Blood II: The Chosen. English summary below.*
+*Inoffizieller HD-Patch mit Launcher für die GOG-Version – deutsche Kurzfassung unten.*
 
-![Launcher](docs/launcher_grafik.png)
+![Launcher](docs/launcher_graphics.png)
 
-## Was der Patch macht
+## What it does
 
-| Bereich | Lösung |
+| Area | Solution |
 |---|---|
-| Grafik | dgVoodoo2 (Direct3D 6 → 11): 3D-Bild in Monitorauflösung bis 4K, bis 8x MSAA, anisotrope Filterung, randloses Vollbild oder Fenster |
-| Bildrate | fest 60 fps – die Spiellogik läuft pro Bild, darüber laufen Zwischensequenzen zu schnell und die Maus ruckelt |
-| Ton | DSOAL + OpenAL Soft: DirectSound mit **EAX** auf heutiger Hardware, optional Kopfhörer-3D (HRTF) |
-| EAX | Der 3D-Provider wird **über den Namen** gewählt (`++3dsoundprovider 7 ++3dsoundprovidername …`). Über die Provider-Nummer fällt das Spiel still auf „kein 3D-Sound“ zurück. |
-| Maus | dinputto8: behebt den kaputten Mausblick bei Mäusen über 125 Hz |
-| Steuerung | Tastenbelegung, Mausempfindlichkeit, Maus umkehren im Launcher; Vorlagen „Modern (WASD)“ und „Original (1998)“ |
-| Breitbild | eigener Hor+-Fix im Speicher (keine fremden Dateien): mehr Sicht zur Seite, auch in Zwischensequenzen; Sichtfeld-Regler 70–90°; ab Werk 4:3 wie im Original |
-| Vollbild | randloses Vollbild statt exklusivem Modus (sonst kleines verschobenes Fenster bzw. eingefrorenes Bild nach Alt+Enter) |
-| Rechte | kein Admin-/XP-Modus mehr (GOG-Kompatibilitätseinträge ersetzt, bei der Deinstallation wiederhergestellt) |
-| Spiel | The Nightmare Levels an/aus, Logo-Videos überspringen |
-| Sprache | Launcher auf Englisch oder Deutsch, ab Werk nach Windows-Sprache, umschaltbar unter Info |
+| Graphics | dgVoodoo2 (Direct3D 6 → 11): 3D picture at monitor resolution up to 4K, up to 8x MSAA, anisotropic filtering, borderless fullscreen or window |
+| Frame rate | locked to 60 fps – the game logic runs per frame; above that cutscenes run too fast and the mouse stutters |
+| Sound | DSOAL + OpenAL Soft: DirectSound with **EAX** on today's hardware, optional headphone 3D (HRTF) |
+| EAX | the 3D provider is chosen **by name** (`++3dsoundprovider 7 ++3dsoundprovidername …`). By provider number the game silently falls back to "no 3D sound" |
+| Mouse | dinputto8: fixes the broken mouse look with mice above 125 Hz |
+| Controls | key bindings, mouse sensitivity and invert mouse in the launcher; presets "Modern (WASD)" and "Original (1998)" |
+| Widescreen | own Hor+ fix in memory (no third-party files): more view to the sides, also in cutscenes; field-of-view slider 70–90°; 4:3 by default as in the original |
+| Fullscreen | borderless fullscreen instead of exclusive mode (otherwise a small shifted window or a frozen picture after Alt+Enter) |
+| Rights | no more admin / XP mode (GOG's compatibility entries are replaced and restored on uninstall) |
+| Game | The Nightmare Levels on/off, skip the logo videos |
+| Language | launcher in English or German, follows Windows by default, switchable under About |
 
-Ausführliche Beschreibung für Spieler: [README.txt](README.txt) (liegt auch dem Download bei).
+Full player documentation (German and English): [README.txt](README.txt) – also included in the download.
 
-## Installation (Spieler)
+## Installation
 
-1. `Blood2HD_Setup.exe` aus den [Releases](../../releases) laden und starten – es findet das GOG-Spiel selbst.
-2. Spielen über „Blood II - HD Launcher“ oder wie gewohnt über GOG Galaxy (der HD-Launcher ersetzt `BLOOD2.EXE`, das Original wird gesichert).
-3. Entfernen über Windows „Apps & Features“.
+1. Download `Blood2HD_Patch_<version>.zip` from [Releases](../../releases), unzip it and run `Blood2HD_Setup.exe` – it finds the GOG game by itself.
+2. Play via "Blood II - HD Launcher" or from GOG Galaxy as usual (the HD launcher replaces `BLOOD2.EXE`; the original is backed up).
+3. Uninstall via Windows "Apps & Features".
 
-Getestet mit der GOG-Version: Blood II 2.0 + Nightmares 1.0.233 (`Client.exe` SHA1 `D7D8138E837443740CF5C995B568ECD437F52B5F`).
+Tested with the GOG release: Blood II 2.0 + Nightmares 1.0.233 (`Client.exe` SHA1 `D7D8138E837443740CF5C995B568ECD437F52B5F`).
 
-## Selbst bauen
+## Building
 
-Voraussetzungen:
+Requirements:
 
 - Windows 10/11, Windows PowerShell 5.1
-- Visual Studio 2019+ oder die **Build Tools** mit „.NET-Desktopbuildtools“ (für `csc.exe`/Roslyn, C# 7.3)
-- .NET Framework 4.x (bei Windows dabei)
+- Visual Studio 2019+ or the **Build Tools** with ".NET desktop build tools" (for `csc.exe` / Roslyn, C# 7.3)
+- .NET Framework 4.x (part of Windows)
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File build.ps1
 ```
 
-Ergebnis:
+Output:
 
-- `out\Blood2HD_Setup.exe` – ein einzelnes Setup, alles eingebettet (Launcher, Payload, Doku, Lizenzen)
-- `out\release\Blood2HD_Patch_<Version>.zip` – Paket zum Hochladen (Setup, Liesmich, Lizenzen, SHA256)
+- `out\Blood2HD_Setup.exe` – a single setup with everything embedded (launcher, payload, docs, licenses)
+- `out\release\Blood2HD_Patch_<version>.zip` – the package for a release (setup, readme, licenses, SHA256)
 
-Die Version steht in `src\common\Text.cs` (`Version.Text`) und in den beiden `AssemblyInfo.cs`.
+The version lives in `src\common\Text.cs` (`Version.Text`) and both `AssemblyInfo.cs`.
 
-## Testen
+## Testing
 
 ```powershell
-# Installieren -> Update (Einstellungen bleiben) -> Deinstallieren -> Byte-Vergleich mit dem Ausgangszustand
-powershell -ExecutionPolicy Bypass -File tests\e2e.ps1 -GameCopy "<Kopie eines unveränderten GOG-Spielordners>"
+# install -> update (settings kept) -> uninstall -> byte comparison with the starting state
+powershell -ExecutionPolicy Bypass -File tests\e2e.ps1 -GameCopy "<copy of an untouched GOG game folder>"
 ```
 
-Spieltests (starten das Spiel, schicken Eingaben nur, solange das Spielfenster vorne ist):
+In-game tests (they start the game and send input only while the game window is in front):
 
-- `tools\ingame.ps1 -Game <Ordner> -Out <Ordner> [-ViaLauncher] [-MouseTest]` – ins erste Level, bewegen, schießen, Screenshots, DSOAL-Log
-- `tools\menushot.ps1` – Hauptmenü fotografieren, ohne Eingaben
+- `tools\ingame.ps1 -Game <folder> -Out <folder> [-ViaLauncher] [-MouseTest]` – into the first level, move, shoot, screenshots, DSOAL log
+- `tools\menushot.ps1` – screenshot of the main menu, no input
 
-Launcher-Schalter für Tests: `/cmdline=<Datei>`, `/snapshot=<Ordner>`, `/keys=modern|original`, `/launch[=<Logdatei>]`, `/lang=en|de`.
-`BLOOD2HD_WORKAREA=1920x1032` täuscht einen kleineren Bildschirm vor (Verkleinerung des Launchers).
+Launcher switches for tests: `/cmdline=<file>`, `/snapshot=<folder>`, `/keys=modern|original`, `/launch[=<logfile>]`, `/lang=en|de`.
+`BLOOD2HD_WORKAREA=1920x1032` fakes a smaller screen (launcher scaling).
 
-## Aufbau
+## Layout
 
 ```
-src/common/     gemeinsam für Launcher und Setup: Spielerkennung, Einstellungen, autoexec.cfg, Texte (DE/EN), Theme
-src/launcher/   BLOOD2.EXE – der HD-Launcher; GameStart.cs = Start + Breitbild-Sichtfeld
-src/setup/      Blood2HD_Setup.exe – Installation, Update, Deinstallation
-src/res/        Logos
-payload/game/   Drittanbieter-Dateien, die ins Spielverzeichnis kommen (unverändert)
-payload/licenses/  deren Lizenzen
-tests/e2e.ps1   End-to-End-Test
-tools/          Spieltests und Analyse-Helfer (xref.py, rezdll.py, milesenum.c)
-docs/           Machbarkeitsstudie (Source Port), Screenshots
+src/common/     shared by launcher and setup: game detection, settings, autoexec.cfg, texts (DE/EN), theme
+src/launcher/   BLOOD2.EXE – the HD launcher; GameStart.cs = start + widescreen field of view
+src/setup/      Blood2HD_Setup.exe – install, update, uninstall
+src/res/        logos
+payload/game/   third-party files that go into the game folder (unchanged)
+payload/licenses/  their licenses
+tests/e2e.ps1   end-to-end test
+tools/          in-game tests and analysis helpers (xref.py, rezdll.py, milesenum.c)
+docs/           feasibility study (source port, German), screenshots
 ```
 
-Spieldateien gehören **nicht** ins Repository (`testgame/`, `reference/` stehen in `.gitignore`).
+Game files are **not** part of the repository (`testgame/` and `reference/` are in `.gitignore`).
 
-## Technische Notizen
+## Technical notes
 
-- **Breitbild-Sichtfeld:** Der Launcher startet `Client.exe` angehalten und leitet die Kopie des Kamera-Sichtfelds bei `0x40FBFD` auf 80 Bytes eigenen x87-Code im ungenutzten Ende von `.text` (`0x47E300`) um:
-  `h' = 2·atan(tan(h/2)·k·(w/h)/(4/3))`, `v' = 2·atan(tan(v/2)·k)`, `k = tan(FOV/2)`. Nur wenn die Originalbytes passen; Ergebnis in `_HDPatch\launch.log`. Auf der Platte ändert sich nichts.
-- **EAX:** Miles-Provider-Namen und der Fallback bei falscher Nummer sind in `PatchSettings.CommandLine()` beschrieben; Nachweis im DSOAL-Log (`DSOAL_LOGLEVEL=4`: `EAX10_ListenerProperties`).
-- **Kompatibilität:** GOG setzt `WINXPSP2 DISABLETHEMES DISABLEDWM RUNASADMIN HIGHDPIAWARE`; der Patch setzt nur `~ HIGHDPIAWARE` für `Client.exe` und sichert die Originale in `_HDPatch_Backup\compat.txt`.
+- **Widescreen field of view:** the launcher starts `Client.exe` suspended and redirects the copy of the camera's field of view at `0x40FBFD` to 80 bytes of own x87 code in the unused tail of `.text` (`0x47E300`):
+  `h' = 2·atan(tan(h/2)·k·(w/h)/(4/3))`, `v' = 2·atan(tan(v/2)·k)`, `k = tan(FOV/2)`. Only when the original bytes match; result in `_HDPatch\launch.log`. Nothing changes on disk.
+- **EAX:** the Miles provider names and the fallback for a wrong number are described in `PatchSettings.CommandLine()`; proof in the DSOAL log (`DSOAL_LOGLEVEL=4`: `EAX10_ListenerProperties`).
+- **Compatibility:** GOG sets `WINXPSP2 DISABLETHEMES DISABLEDWM RUNASADMIN HIGHDPIAWARE`; the patch only sets `~ HIGHDPIAWARE` for `Client.exe` and keeps the originals in `_HDPatch_Backup\compat.txt`.
 
-## Dank
+## Credits
 
-- **dgVoodoo2** – Dege (Freeware)
+- **dgVoodoo2** – Dege (freeware)
 - **DSOAL**, **OpenAL Soft** – Chris Robinson (LGPL)
 - **dinputto8** – Elisha Riedlinger (zlib)
-- **AlphaYellow** – [Widescreen Fixes](https://github.com/alphayellow1/AlphaYellowWidescreenFixes) (MIT): die Stelle des Kamera-Sichtfelds in `Client.exe`
-- **PCGamingWiki**-Community – Hinweise zu Maus, Bildrate und EAX
+- **AlphaYellow** – [Widescreen Fixes](https://github.com/alphayellow1/AlphaYellowWidescreenFixes) (MIT): the location of the camera field of view in `Client.exe`
+- **PCGamingWiki** community – notes on mouse, frame rate and EAX
 
-Details und Versionen: [THIRD-PARTY.txt](THIRD-PARTY.txt).
+Details and versions: [THIRD-PARTY.txt](THIRD-PARTY.txt).
 
-## Lizenz
+## License
 
-Eigener Code und Doku: [MIT](LICENSE). Drittanbieter-Dateien in `payload/` unter ihren eigenen Lizenzen. Die Logos in `src/res/` gehören ihren Inhabern.
+© 2026 [BockwurstWilly](https://github.com/BockwurstWilly) – the patch's own code and docs are licensed under the
+**[PolyForm Noncommercial License 1.0.0](LICENSE)**: you may use, share and change it for any non-commercial purpose,
+as long as the `Required Notice` line (credit to BockwurstWilly with the link) stays with every copy.
+Commercial use – selling, paid bundles, ad-financed download portals – only by arrangement: contact me via GitHub.
 
-Blood II: The Chosen © 1998 Monolith Productions. Inoffizielles Fanprojekt, enthält keine Spieldateien.
+Third-party files in `payload/` keep their own licenses (see [THIRD-PARTY.txt](THIRD-PARTY.txt)). The logos in `src/res/` belong to their owners.
+
+Blood II: The Chosen © 1998 Monolith Productions. Unofficial fan project; contains no game files.
 
 ---
 
-## English
+## Deutsch
 
-Unofficial HD patch and launcher for the GOG release of *Blood II: The Chosen* + *The Nightmare Levels* on Windows 10/11: dgVoodoo2 (D3D11, up to 4K, MSAA), 60 fps cap, DSOAL + OpenAL Soft with working EAX (the provider has to be selected by name), dinputto8 mouse fix, key bindings in the launcher, optional Hor+ widescreen (own in-memory patch, no third-party files), borderless fullscreen, no admin/XP mode. Launcher in English or German (follows the Windows language, switchable under About). One setup; uninstalling restores the game folder byte for byte.
+Inoffizieller HD-Patch mit eigenem Launcher für die GOG-Version von *Blood II: The Chosen* + *The Nightmare Levels* unter Windows 10/11: dgVoodoo2 (Direct3D 11, bis 4K, MSAA), 60 fps, DSOAL + OpenAL Soft mit funktionierendem EAX (der Provider muss über den Namen gewählt werden), Maus-Fix mit dinputto8, Tastenbelegung im Launcher, optionales Hor+-Breitbild (eigener Patch im Speicher), randloses Vollbild, kein Admin-/XP-Modus. Launcher auf Deutsch oder Englisch. Ein Setup; die Deinstallation stellt den Spielordner byte-genau wieder her. Ausführlich: [README.txt](README.txt).
 
-Build: Visual Studio 2019+ or Build Tools (.NET desktop build tools), then `powershell -ExecutionPolicy Bypass -File build.ps1` → `out\Blood2HD_Setup.exe` and `out\release\*.zip`. Test: `tests\e2e.ps1 -GameCopy <pristine GOG copy>`.
+Lizenz: PolyForm Noncommercial 1.0.0 – frei nutzen, weitergeben und verändern, aber nicht kommerziell; der Hinweis auf BockwurstWilly muss bleiben. Kommerzielle Nutzung nur nach Absprache.
 
-Made by BockwurstWilly using Claude · Presented by CompiWare
+Presented by CompiWare · Made by BockwurstWilly using Claude

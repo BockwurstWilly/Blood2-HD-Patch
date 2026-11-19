@@ -5,7 +5,7 @@ namespace Blood2HD
 {
     static class Version
     {
-        public const string Text = "1.2.1";
+        public const string Text = "1.2.2";
     }
 
     /// <summary>
@@ -150,7 +150,7 @@ namespace Blood2HD
             { "info_problems", new[] { "Probleme:", "Problems:" } },
             { "info_tested", new[] { "Getestete Spielversion.", "Tested game version." } },
             { "info_untested", new[] { "Nicht getestete Spielversion.", "Untested game version." } },
-            { "info_components", new[] { "Verbaut – vielen Dank an ihre Schöpfer:\n• dgVoodoo2 von Dege – Direct3D 6 über Direct3D 11, Monitorauflösung, Kantenglättung (Freeware)\n• DSOAL und OpenAL Soft von Chris Robinson – DirectSound mit EAX auf heutigen Soundkarten (LGPL)\n• dinputto8 von Elisha Riedlinger – DirectInput 8 für Mäuse mit hoher Abfragerate (zlib)\n• Breitbild-Sichtfeld: eigener Code; die Stelle in Client.exe hat AlphaYellow gefunden (Widescreen Fixes, MIT)\n• Hinweise zu Maus, Bildrate und EAX: PCGamingWiki-Community", "Built in – many thanks to their creators:\n• dgVoodoo2 by Dege - Direct3D 6 via Direct3D 11, monitor resolution, anti-aliasing (freeware)\n• DSOAL and OpenAL Soft by Chris Robinson - DirectSound with EAX on today's sound cards (LGPL)\n• dinputto8 by Elisha Riedlinger - DirectInput 8 for high polling rate mice (zlib)\n• Widescreen field of view: own code; the spot in Client.exe was found by AlphaYellow (Widescreen Fixes, MIT)\n• Mouse, frame rate and EAX hints: the PCGamingWiki community" } },
+            { "info_components", new[] { "Verbaut – vielen Dank an ihre Schöpfer:\n• dgVoodoo2 von Dege – Direct3D 6 über Direct3D 11, Monitorauflösung, Kantenglättung (Freeware)\n• DSOAL und OpenAL Soft von Chris Robinson – DirectSound mit EAX auf heutigen Soundkarten (LGPL)\n• dinputto8 von Elisha Riedlinger – DirectInput 8 für Mäuse mit hoher Abfragerate (zlib)\n• Breitbild-Sichtfeld: eigener Code; die Stelle in Client.exe hat AlphaYellow gefunden (Widescreen Fixes, MIT)\n• Hinweise zu Maus, Bildrate und EAX: PCGamingWiki-Community\n\nLizenz: PolyForm Noncommercial 1.0.0 – frei nutzen und weitergeben, nicht kommerziell.\n© 2026 BockwurstWilly · github.com/BockwurstWilly", "Built in – many thanks to their creators:\n• dgVoodoo2 by Dege - Direct3D 6 via Direct3D 11, monitor resolution, anti-aliasing (freeware)\n• DSOAL and OpenAL Soft by Chris Robinson - DirectSound with EAX on today's sound cards (LGPL)\n• dinputto8 by Elisha Riedlinger - DirectInput 8 for high polling rate mice (zlib)\n• Widescreen field of view: own code; the spot in Client.exe was found by AlphaYellow (Widescreen Fixes, MIT)\n• Mouse, frame rate and EAX hints: the PCGamingWiki community\n\nLicense: PolyForm Noncommercial 1.0.0 – free to use and share, non-commercial.\n© 2026 BockwurstWilly · github.com/BockwurstWilly" } },
             { "info_lang", new[] { "Sprache / Language", "Language / Sprache" } },
             { "lang_auto", new[] { "Automatisch (Windows-Sprache)", "Automatic (Windows language)" } },
             { "info_open", new[] { "Spielordner", "Game folder" } },

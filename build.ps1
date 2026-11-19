@@ -108,8 +108,18 @@ Copy-Item $setup "$rel\Blood2HD_Setup.exe"
 Copy-Item "$root\README.txt" "$rel\Liesmich - Readme.txt"
 Copy-Item "$root\THIRD-PARTY.txt" "$rel\Lizenzen - Licenses\THIRD-PARTY.txt"
 Copy-Item "$payload\licenses\*" "$rel\Lizenzen - Licenses\"
+Copy-Item "$root\LICENSE" "$rel\Lizenzen - Licenses\HD-Patch-License.txt"
 "$hash *Blood2HD_Setup.exe" | Set-Content "$rel\Blood2HD_Setup.exe.sha256" -Encoding ASCII
 $zip = Join-Path $out "release\$name.zip"
 if (Test-Path $zip) { Remove-Item $zip }
-Compress-Archive -Path $rel -DestinationPath $zip
+# entries with forward slashes (Compress-Archive in PowerShell 5.1 writes backslashes, which other tools reject)
+Add-Type -AssemblyName System.IO.Compression, System.IO.Compression.FileSystem
+$za = [IO.Compression.ZipFile]::Open($zip, 'Create')
+try {
+    foreach ($f in Get-ChildItem $rel -Recurse -File) {
+        $entry = $name + '/' + $f.FullName.Substring($rel.Length + 1).Replace([char]92, [char]47)
+        [void][IO.Compression.ZipFileExtensions]::CreateEntryFromFile($za, $f.FullName, $entry, 'Optimal')
+    }
+}
+finally { $za.Dispose() }
 Write-Host ("== release: {0} ({1:N1} MB)" -f $zip, ((Get-Item $zip).Length / 1MB))

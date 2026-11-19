@@ -1,4 +1,4 @@
-﻿Blood II: The Chosen HD Patch 1.2.1 - Drittanbieter-Komponenten / third-party components
+﻿Blood II: The Chosen HD Patch 1.2.2 - Drittanbieter-Komponenten / third-party components
 ======================================================================================
 
 dgVoodoo2 2.87.5  (DDraw.dll, D3DImm.dll, dgVoodooCpl.exe, dgVoodoo.conf)
@@ -24,7 +24,9 @@ Microsoft Visual C++ Redistributable  (vcruntime140.dll, msvcp140.dll, msvcp140_
   (c) Microsoft - redistributable runtime files, required by DSOAL
 
 Blood II HD Patch  (BLOOD2.EXE - the HD launcher, Blood2HD_Setup.exe)
-  CompiWare - BockwurstWilly using Claude
+  (c) 2026 BockwurstWilly (https://github.com/BockwurstWilly) - PolyForm Noncommercial License 1.0.0
+  (HD-Patch-License.txt): free to use, share and change, not for commercial use; keep the credit.
+  Presented by CompiWare - made by BockwurstWilly using Claude
 
 Thanks / Dank (no code or files included):
   AlphaYellow - Widescreen Fixes (MIT), https://github.com/alphayellow1/AlphaYellowWidescreenFixes
