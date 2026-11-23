@@ -1,0 +1,42 @@
+﻿Blood II: The Chosen HD Patch 1.3 - Drittanbieter-Komponenten / third-party components
+======================================================================================
+
+dgVoodoo2 2.87.5  (DDraw.dll, D3DImm.dll, dgVoodooCpl.exe, dgVoodoo.conf)
+  (c) Dege - freeware, unmodified binaries of the official release
+  https://github.com/dege-diosg/dgVoodoo2/releases/tag/v2.87.5
+  http://dege.freeweb.hu/dgVoodoo2/
+
+DSOAL r697  (dsound.dll)
+  (c) Chris Robinson and contributors - GNU LGPL 2.1 (DSOAL-License.txt)
+  unmodified binary, source: https://github.com/kcat/dsoal
+  commit e11128250439d586483ee6598d1670ab52ab5e37
+
+OpenAL Soft r10852  (dsoal-aldrv.dll)
+  (c) Chris Robinson and contributors - GNU LGPL 2 (OpenALSoft-License.txt)
+  unmodified binary from the DSOAL release, source: https://github.com/kcat/openal-soft
+  commit 4a52288b772d1722713675f71bb30f321e78fd80
+
+dinputto8 v1.1.100.0  (dinput.dll)
+  (c) Elisha Riedlinger - zlib license (dinputto8-License.txt)
+  unmodified binary of the official release, source: https://github.com/elishacloud/dinputto8
+
+Microsoft Visual C++ Redistributable  (vcruntime140.dll, msvcp140.dll, msvcp140_atomic_wait.dll)
+  (c) Microsoft - redistributable runtime files, required by DSOAL
+
+Blood II HD Patch  (BLOOD2.EXE - the HD launcher, Blood2HD_Setup.exe)
+  (c) 2026 BockwurstWilly (https://github.com/BockwurstWilly) - PolyForm Noncommercial License 1.0.0
+  (HD-Patch-License.txt): free to use, share and change, not for commercial use; keep the credit.
+  Made by BockwurstWilly using Claude
+
+Thanks / Dank (no code or files included):
+  AlphaYellow - Widescreen Fixes (MIT), https://github.com/alphayellow1/AlphaYellowWidescreenFixes
+    found the camera FOV copy in Client.exe that the launcher's own widescreen code patches
+  PCGamingWiki community - https://www.pcgamingwiki.com/wiki/Blood_II:_The_Chosen
+    mouse (dinputto8), frame rate and EAX hints
+
+Not included, used from the GOG installation: the game files and the console artwork the
+launcher shows (read at runtime from console.PCX).
+
+Blood II: The Chosen (c) 1998 Monolith Productions. Blood, Blood II and their logos are
+trademarks of their respective owners. This patch is an unofficial fan project and contains
+no game files.

@@ -1,0 +1,15 @@
+# SHA256 of the third-party binaries in payload\game, as taken from the official releases
+# (see THIRD-PARTY.txt for versions and sources). build.ps1 refuses to build when one differs.
+# dgVoodoo2 2.87.5 (Dege)
+612a24408a090a3c6f3886557fa18034ee742e94ad0a40ebdf854d2816176c2e  DDraw.dll
+93c534f2d17419ea78f15551f7e0aac78b3c503733a840914fa063708a5afe8e  D3DImm.dll
+87fb878166dcaef3e75ff170de030527c73f5c9b164c5943da13f8a97b0b75c6  dgVoodooCpl.exe
+# dinputto8 v1.1.100.0 (Elisha Riedlinger)
+f96bb1101e23a6477043a3859cbf875a990eaa62ee6849f87e967b3dd963f781  dinput.dll
+# DSOAL r697 + OpenAL Soft r10852 (Chris Robinson)
+4c394d4b46500dc56ea56d09df2e129363ec80fd6be8f0d1863d75bcc3a43d47  dsound.dll
+04f44c4b93d3a397ae022e86bb222a0110752003763fa6714afeb5f61290d077  dsoal-aldrv.dll
+# Microsoft Visual C++ runtime (needed by DSOAL)
+2fa6efc053203460a23d3a25158f227d895d2dadc63acc1a372da97c3a4281c3  vcruntime140.dll
+f0cda2a0cf1fe6fbbf579b9098462329d3aaa7513a207af2e0f33b01456e388a  msvcp140.dll
+e1142584f337b9b650d6d888652cb24f7b16a7dd93476840a050047bb00f0463  msvcp140_atomic_wait.dll
